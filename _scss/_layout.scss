@@ -192,8 +192,24 @@ header {
     z-index: 1;
     position: relative;
 
-    #tagline { 
-
+}
+/**********/
+/* About  */
+/**********/
+#about {
+    /********/
+    /* Tagline*/
+    /********/
+    #tagline {
+        float: left;
+        margin-top: -30vh;
+        max-height: 190px;
+        height: 90%;
+        position: absolute;
+        .panel { 
+            padding: 0;
+            margin-right: 0;
+        } 
         .panel-content { 
             padding: 20px 0 20px 40px;
         }
@@ -201,32 +217,12 @@ header {
         h1 { 
             text-align: left; 
             color: $clr-white-full;
+            font-weight: 600;
         }
-        z-index: 2;
-        margin-top: 60vh;
-        margin-left: -20px; 
-        width: 60%;
+        z-index: 3;
+        width: 40%;
+        min-width: 440px;
     }
-    h1 { 
-        color: $clr-primary;
-        font-weight: 600;
-    }
-    .btn.btn-raised.btn-default { 
-        margin-top: 30px;
-        color: white;
-        background-color: $clr-primary;
-    }
-    .centered {
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-/**********/
-/* About  */
-/**********/
-#about {
     background-color: $clr-sndry;
     a { 
         font-weight: 600;
@@ -287,6 +283,9 @@ header {
         h1, p {
             color: $clr-black;            
         }
+    }
+    small { 
+        color: $clr-primary;
     }
 }
 
@@ -407,6 +406,10 @@ footer {
 }
 
 @media (max-width: 767px) {     
+    .section-content{ 
+        margin-left: 25px;
+        margin-right: 25px;
+    }
     h1 { 
         font-size: $xl-font-size;
     }
@@ -417,13 +420,11 @@ footer {
         background-color: $clr-white-full;
         box-shadow: 0 0 5px rgba(0, 0, 0, .4);
         .navbar-header .logo-banner { 
-            vertical-align: middle;
             position: relative;
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 350px;
-            padding-left: 15px;
         }
         .navbar-header img {
             position: absolute;
@@ -435,6 +436,7 @@ footer {
         }
         &.affix #site-menu, &.affix-top #site-menu {
             li a {
+                margin-top: 0;
                 font-size: $xs-font-size;
             }
         }
@@ -443,19 +445,19 @@ footer {
         h1 { 
             font-size: $lg-font-size;
         }
-        #tagline {
-            margin-top: 63vh; 
-            width: 310px;
-        }
-    }
-    #services { 
-        .panel { 
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto; 
-        }
     }
     #about { 
+        #tagline {
+            h1 { 
+                font-size: $lg-font-size;
+            }
+            .panel-content { 
+                padding-left: 8px;
+            }
+            max-height: none;
+            min-width: 300px;
+            height: auto;
+        }
         h1 { 
             margin: 0 12px;
         }
@@ -471,6 +473,13 @@ footer {
                 min-height: 200px;
                 max-height: 300px;
             }
+        }
+    }
+    #services { 
+        .panel { 
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto; 
         }
     }
 }
@@ -498,12 +507,22 @@ footer {
     p {
         font-size: $sm-font-size;
     } 
-    header nav.navbar {
-            .navbar-header a img {
-            left: 0px;
-            width: 60vw;
+    #services {
+            .panel {
+            width: 100%;
         }
     }
+
+    header nav.navbar {
+            .navbar-header {
+                .logo-banner, a img {
+                    padding: 0;
+                    left: 0px;
+                    margin: 5px 0;
+                    width: 60vw;
+                }
+            }
+        }
 }
 
 @media (max-width : 375px) { 
